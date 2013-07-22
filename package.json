@@ -16,7 +16,7 @@
         "dessert"   : "~0.3.2",
         "troop"     : "~0.5.1",
         "sntls"     : "~0.13.0",
-        "lightstore": "~0.1.2"
+        "lightstore": "~0.1.4"
     },
     "devDependencies": {
         "phil"                : "~0.2.3",

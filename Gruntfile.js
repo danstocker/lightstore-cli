@@ -4,21 +4,12 @@ module.exports = function (grunt) {
 
     var params = {
         files: [
-            'js/namespace.js',
-            'js/Rjson.js',
-            'js/KeyValueStore.js',
-            'js/exports.js'
+            'js/lightstore-cli.js'
         ],
 
-        test: [
-            'js/jsTestDriver.conf'
-        ],
+        test: [],
 
-        globals: {
-            dessert: true,
-            troop  : true,
-            sntls  : true
-        }
+        globals: {}
     };
 
     // invoking common grunt process

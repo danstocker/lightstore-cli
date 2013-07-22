@@ -5,13 +5,18 @@
 (function () {
     'use strict';
 
-    var Rjson = require('lightstore').Rjson,
+    var $path = require('path'),
+        lightstore = /** @type {lightstore} */require('lightstore'),
         stdout = process.stdout,
         argv = process.argv,
         fileName = argv[2],
-        rjson = Rjson.create(fileName),
+        fileExt = $path.extname(fileName),
+        isLightStore = fileExt === '.ls',
+        store = isLightStore ?
+            lightstore.KeyValueStore.create(fileName) :
+            lightstore.Rjson.create(fileName),
         command = argv[3],
-        data = argv[4];
+        args = argv.slice(4);
 
     //////////////////////////////
     // Utils
@@ -53,7 +58,7 @@
         /**
          * Compacting database.
          */
-        rjson.compact(function (err) {
+        store.compact(function (err) {
             if (err) {
                 error(err);
             } else {
@@ -63,20 +68,34 @@
         break;
 
     case 'write':
-        /**
-         * Writing data to database.
-         */
-        if (typeof data !== 'undefined') {
-            var parsed;
+        if (!args.length) {
+            break;
+        }
+
+        if (isLightStore) {
+            // file is a lightstore file
+            args[0] = args[0].toPath();
             try {
-                parsed = JSON.parse(data);
-                rjson.write(parsed, function () {
-                    ok("Data written.");
-                });
+                args[1] = JSON.parse(args[1]);
             } catch (e) {
+                // if parsing fails, we'll still write it as string
                 error("Invalid JSON");
             }
+        } else {
+            // file is a plain RJSON
+            try {
+                args[0] = JSON.parse(args[0]);
+            } catch (e) {
+                error("Invalid JSON");
+                break;
+            }
         }
+
+        args.push(function () {
+            ok("Data written.");
+        });
+
+        store.write.apply(store, args);
         break;
 
     default:
@@ -84,7 +103,7 @@
         /**
          * Reading database and outputs contents.
          */
-        rjson.read(function (err, data) {
+        store.read(function (err, data) {
             if (err) {
                 error(err);
             } else {

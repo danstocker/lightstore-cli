@@ -1,6 +1,6 @@
 {
     "name"           : "lightstore-cli",
-    "version"        : "0.1.1",
+    "version"        : "0.2.0",
     "description"    : "JSON key-value store CLI",
     "keywords"       : [
         "json",
@@ -18,7 +18,7 @@
         "dessert"   : "~0.3.2",
         "troop"     : "~0.5.1",
         "sntls"     : "~0.13.0",
-        "lightstore": "~0.1.4"
+        "lightstore": "~0.1.5"
     },
     "files"          : [
         "js/lightstore-cli.js",

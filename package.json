@@ -1,6 +1,6 @@
 {
     "name"           : "lightstore-cli",
-    "version"        : "0.2.0",
+    "version"        : "0.2.1",
     "description"    : "JSON key-value store CLI",
     "keywords"       : [
         "json",
@@ -21,10 +21,9 @@
         "lightstore": "~0.1.5"
     },
     "files"          : [
-        "js/lightstore-cli.js",
-        "lightstore.sh"
+        "js/lightstore-cli.js"
     ],
     "bin"            : {
-        "lightstore": "./lightstore.sh"
+        "lightstore": "js/lightstore-cli.js"
     }
 }

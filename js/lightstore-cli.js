@@ -51,7 +51,7 @@
      */
     function open(fileName) {
         ls = lightstore.PersistedTree.create(fileName)
-            .read(prompt.bind(null, command));
+            .load(prompt.bind(null, command));
     }
 
     /**

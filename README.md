@@ -18,7 +18,7 @@ The LightStore CLI gives you a prompt-based interface where you can run JavaScri
 LightStore gives you the following globals (apart from the common JS and Node globals):
 
 - `ls`: Reference to the query API. Instance of `lightstore.PersistedTree`, which inherits from [`sntls.Tree`](http://danstocker.github.io/sntls/sntls.Tree.html).
-- `open()`: Opens a datastore file for read/write when none was specified in the command line.
+- `open()`: Opens a datastore file for read/write. You can check the current file name via `ls.file`.
 - `exit()`: Shorthand for exiting the CLI. Calls `process.exit()`.
 
 ###Examples
@@ -37,3 +37,12 @@ Sets a value in the datastore
         "bar": "hello"
       }
     }
+
+Queries paths grouped by employee last names and saves the resulting data set to file in LightStore format. Illustrates how LightStore allows all transformations available through `sntls`.
+
+    $ lightstore employees.ls
+    > ls.queryPathValuePairsAsHash('|>firstName'.toQuery())
+        .toStringDictionary()
+        .reverse()
+        .toPersistedTree('firstNames.ls')
+        .save()

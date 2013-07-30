@@ -15,7 +15,7 @@ Usage
 
 The LightStore CLI gives you a prompt-based interface where you can run JavaScript expressions as it were a Node prompt. Alternatively, you can specify a file name and expression up front, and have only that ran by the LightStore engine.
 
-LightStore gives you the following globals (apart from the common JS and Node globals):
+LightStore gives you the following globals (apart from the regular JS and Node globals):
 
 - `ls`: Reference to the query API. Instance of `lightstore.PersistedTree`, which inherits from [`sntls.Tree`](http://danstocker.github.io/sntls/sntls.Tree.html).
 - `open()`: Opens a datastore file for read/write. You can check the current file name via `ls.file`.

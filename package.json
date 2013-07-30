@@ -1,29 +1,31 @@
 {
-    "name"           : "lightstore-cli",
-    "version"        : "0.2.2",
-    "description"    : "JSON key-value store CLI",
-    "keywords"       : [
-        "json",
-        "datastore",
-        "key-value"
+    "name"        : "lightstore-cli",
+    "version"     : "0.2.3",
+    "description" : "CLI for JSON based, queryable KV store",
+    "keywords"    : [
+        "lightstore",
+        "json", "file",
+        "datastore", "storage", "persistence",
+        "database", "db",
+        "key-value", "kv"
     ],
-    "author"         : "Dan Stocker <dan@kwaia.com>",
-    "copyright"      : "Copyright (c) 2013 Dan Stocker",
-    "license"        : "MIT",
-    "repository"     : {
+    "author"      : "Dan Stocker <dan@kwaia.com>",
+    "copyright"   : "Copyright (c) 2013 Dan Stocker",
+    "license"     : "MIT",
+    "repository"  : {
         "type": "git",
         "url" : "https://github.com/danstocker/lightstore-cli.git"
     },
-    "dependencies"   : {
+    "dependencies": {
         "dessert"   : "~0.3.2",
         "troop"     : "~0.5.1",
         "sntls"     : "~0.13.0",
         "lightstore": "~0.2.0"
     },
-    "files"          : [
+    "files"       : [
         "js/lightstore-cli.js"
     ],
-    "bin"            : {
+    "bin"         : {
         "lightstore": "js/lightstore-cli.js"
     }
 }

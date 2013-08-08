@@ -1,6 +1,6 @@
 {
     "name"        : "lightstore-cli",
-    "version"     : "0.2.3",
+    "version"     : "0.2.4",
     "description" : "CLI for JSON based, queryable KV store",
     "keywords"    : [
         "lightstore",
@@ -19,7 +19,7 @@
     "dependencies": {
         "dessert"   : "~0.3.2",
         "troop"     : "~0.6.0",
-        "sntls"     : "~0.14.1",
+        "sntls"     : "~0.14.2",
         "lightstore": "~0.2.1"
     },
     "files"       : [

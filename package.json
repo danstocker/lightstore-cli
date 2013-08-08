@@ -18,9 +18,9 @@
     },
     "dependencies": {
         "dessert"   : "~0.3.2",
-        "troop"     : "~0.5.1",
-        "sntls"     : "~0.13.0",
-        "lightstore": "~0.2.0"
+        "troop"     : "~0.6.0",
+        "sntls"     : "~0.14.1",
+        "lightstore": "~0.2.1"
     },
     "files"       : [
         "js/lightstore-cli.js"

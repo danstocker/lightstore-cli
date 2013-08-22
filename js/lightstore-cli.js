@@ -16,7 +16,7 @@
 
     /**
      * One iteration in the readline-loop.
-     * Processes a single JvaScript command.
+     * Processes a single JavaScript command.
      * @param {string} answer
      */
     function prompt(answer) {

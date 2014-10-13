@@ -4,11 +4,11 @@
 (function () {
     'use strict';
 
-    var $path = require('path'),
-        $readline = require('readline').createInterface({
+    var readline = require('readline').createInterface({
             input : process.stdin,
             output: process.stdout
         }),
+        sntls = require('sntls'),
         lightstore = /** @type {lightstore} */require('lightstore'),
         fileName = process.argv[2],
         command = process.argv[3],
@@ -39,7 +39,7 @@
 
         // print next prompt
         if (!command) {
-            $readline.question("> ", prompt);
+            readline.question("> ", prompt);
         } else {
             process.exit();
         }
